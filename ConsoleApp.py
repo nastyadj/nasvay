@@ -1,9 +1,7 @@
 class ConsoleApp:
-    """ Простой класс для создания консольного приложения. Содержит основные командЫ"""
+    """ Простой класс для создания консольного приложения. Содержит основные команды"""
     def __init__(self):
         """ Инициализирует приложение и устанавливает стандартные команды"""
-        self.show_help = None
-        self.quit_app = None
         self.commands ={'/help': self.show_help, '/quit': self.quit_app}
         print("приложение запущеною Введдите команду ( или /help для справки).")
     def start(self):
@@ -15,11 +13,11 @@ class ConsoleApp:
                 self.execute_command(command)
             else:
                 print("Вы не ввели команду")
-                def execute_command(self, command: object):
-                    """Выполняет команду, если она существует, иначе сообщает об ошибке
+    def execute_command(self, command):
+            """Выполняет команду, если она существует, иначе сообщает об ошибке
                     Args:
                         command(str): Команда, введенная пользователем."""
-                    if command in self.commands:
+            if command in self.commands:
                         self.commands[command]()
                     else:
                         print("Неизвестаная команда. Введите /help для списка доступных команд")
